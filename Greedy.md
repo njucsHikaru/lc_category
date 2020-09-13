@@ -34,3 +34,65 @@
   ```
   
 
+### 12. Integer to Roman
+
+- Arr1: 数字
+- Arr2: string，和arr1相对应
+- greedy：先匹配最大的，再匹配小的
+
+### 45. Jump Game II
+
+我们每次在可跳范围内选择可以使得跳的更远的位置。
+
+我们用 end 表示当前能跳的边界，对于上边第一个图的橙色 1，第二个图中就是橙色的 4，遍历数组的时候，到了边界，我们就重新更新新的边界。
+
+```java
+public int jump(int[] nums) {
+    int end = 0;
+    int maxPosition = 0; 
+    int steps = 0;
+    for(int i = 0; i < nums.length - 1; i++){
+        //找能跳的最远的
+        maxPosition = Math.max(maxPosition, nums[i] + i); 
+        if( i == end){ //遇到边界，就更新边界，并且步数加一
+            end = maxPosition;
+            steps++;
+        }
+    }
+    return steps;
+}
+```
+
+
+
+### 57. Insert Interval
+
+遍历Intervals，和当前interval进行merge
+
+- M1
+
+  - 给个容器List放区间
+
+  - 先把起点比自己小的都放进去
+  - 放自己，合并当前区间
+
+  - 后面的继续放进来，和当前区间判断是否需要合并
+
+- M2
+  - Newinterval: ns, ne
+  - if ns > i.e
+    - Add(interval)
+  - if ne < i.s
+    - add({ns, ne})
+    - add(remaining intervals)
+    - return
+  - else
+    - merge new interval and current interval
+  - Last: add {ns, ne}
+
+
+
+### 134. Gas Station
+
+https://leetcode-cn.com/problems/gas-station/solution/jia-you-zhan-by-leetcode/
+

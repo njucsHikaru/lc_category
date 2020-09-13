@@ -1,3 +1,5 @@
+
+
 # Math & String
 
 
@@ -60,9 +62,64 @@
 
 
 
+### 29. Divide Two Integers
 
+- 思路1
 
+  - 将除法转化为减法，循环相减
+  - 由于被除数和除数可能异号，加一个标志位进行判断
+  - 将被除数和除数都转成正数或负数进行计算，由于在Java中，当t=Integer.MIN_VALUE时（t取相反数依旧是它本身）此时可能存在越界问题，因此都用负数进行计算
+  - 当dividend=Integer.MIN_VALUE，divisor=-1时，结果越界，将该情况特殊处理
 
+  ```java
+  public int divide(int dividend, int divisor) {
+  		if(dividend==Integer.MIN_VALUE&&divisor==-1)
+  			return Integer.MAX_VALUE;
+  		
+  		boolean k=(dividend>0&&divisor>0)||(dividend<0&&divisor<0);
+  		int result=0;
+  		dividend=-Math.abs(dividend);
+              divisor=-Math.abs(divisor);
+  		while(dividend<=divisor) {
+  			dividend-=divisor;
+  			result+=1;
+  		}
+  		return k?result:-result;
+  	}
+  ```
+
+  
+
+- 思路2
+
+  - 采用二分法的思想，dividend每次减去2^n个divisor（尽可能多），同时reslut每次加2^n
+
+  ```java
+  public int divide(int dividend, int divisor) {
+  		if(dividend==Integer.MIN_VALUE&&divisor==-1)
+  			return Integer.MAX_VALUE;
+  		
+  		boolean k=(dividend>0&&divisor>0)||(dividend<0&&divisor<0);
+  		int result=0;
+  		dividend=-Math.abs(dividend);
+                  divisor=-Math.abs(divisor);
+  		while(dividend<=divisor) {
+  			int temp=divisor;
+  			int c=1;
+  			while(dividend-temp<=temp) {
+  				temp=temp<<1;
+  				c=c<<1;
+  			}
+  			dividend-=temp;
+  			result+=c;
+  		}
+  		return k?result:-result;
+  }
+  ```
+
+  
+
+### 38. Count and Say
 
 
 

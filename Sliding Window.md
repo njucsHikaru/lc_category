@@ -89,6 +89,11 @@ public int lengthOfLongestSubstring(String s) {
 }
 ```
 
+### 28. Implement strStr()
+
+- O((N-L)*L)
+- Rabin Karp
+  - 
 
 ### 76. Minimum Window Substring
 
@@ -115,7 +120,7 @@ public int lengthOfLongestSubstring(String s) {
 - tFreq
 2. match: 当前有多少个T中的字符已经满足个数条件
 - 滑动时，当前字符在win中的val等于t中的val，则match++
-- 当match等同于required时，满足条件了，先保存先在的left和right
+- 当match等同于required时，满足条件了，先保存现在的left和right
 
 https://leetcode.com/problems/minimum-window-substring/discuss/26808/Here-is-a-10-line-template-that-can-solve-most-'substring'-problems
 ```

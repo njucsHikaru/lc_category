@@ -120,5 +120,59 @@
 
 
 
+### 26. Remove Duplicates from Sorted Array
+
+### 27. Remove Element
+
+### 75. Sort Colors
+
+一次遍历
+
+荷兰国旗问题：给每个数字设定一种颜色，并按照荷兰国旗颜色的顺序进行调整。
+
+- 维护三个指针，p0, current, p2
+
+- p0之前都为0，p0 - current都为1，current和p2还未探索，p2之后所有的数都是2
+
+- current = p2时，数组已经探索完
+
+  
+
+### 80. Remove Duplicates from Sorted Array II
+
+overwrite
+
+
+
+### 88. Merge Sorted Array
+
+
+
+### 209. Minimum Size Subarray Sum
+
+
+
+## 快慢指针
+
+### 19. Remove Nth Node From End of List
+
+
+
+### 141. Linked List Cycle
+
+fast = fast.next.next;
+
+slow = slow.next.next;
+
+fast和slow相遇，有环；else 没有 （停止条件，fast.next = null) 
+
+如果不相遇就一直往后跑。
+
+
+
+### 142. Linked List Cycle II
+
+
+
 
 

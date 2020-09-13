@@ -61,9 +61,11 @@
 
 ### [19. 删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/)
 
-- 思路
+- 思路1
   - 遍历第一遍，找出一共有多少个节点 (sum)
   - 找到第 sum - N  个节点, 删除它的下一个节点
+- 思路2
+  - 遍历一遍，到n+1的时候second pointer从头开始跟着一起往后
 - 代码
 
 ```java
@@ -303,4 +305,48 @@ private ListNode reverse(ListNode head) {
     return pre;
 }
 ```
+
+###82. Remove Duplicates from Sorted List II
+
+尾插法
+
+###83. Remove Duplicates from Sorted List
+
+
+
+### 86. Partition List
+
+all nodes less than x come brefore nodes greater than or equal to x.
+
+- 思路: two pointer
+
+  two lists --> merge
+
+  
+
+### 92. Reverse Linked List II
+
+###143. Reorder List
+
+分成两半，后面一半逆序，然后错开合起来
+
+### 147. Insertion Sort List
+
+- 从第一个dummy开始比较
+
+### 148. Sort List
+
+- Merge sort
+  - 通过快慢指针找到mid --> cut the list to two halves
+  - sort each half
+  - merge l1 & l2
+- merge
+
+
+
+
+
+### 
+
+
 

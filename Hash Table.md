@@ -30,3 +30,12 @@
 
 
 
+### 36. Valid Sudoku
+
+- 分别用rows[], columns[], boxs[] 三个hashmap数组来存
+- 把number和位置放进去，看是否会重复，count > 1时就return false
+  - rows[]: 每一行 ，rows[j] = (num, +1)
+  - columns[]: 每一列，columns[i] = (num, +1)
+  - boxes: 每一个九宫格，boxes[] = (num, +1)
+    - 根据i, j 判断在哪个九宫格：i / 3代表纵向，j / 3代表横向。所以是i / 3 * 3 + j / 3
+
